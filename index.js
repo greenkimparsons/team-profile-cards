@@ -1,37 +1,47 @@
-// comes with node when it's downloaded
-const path = require("path"); //allows you to navigate through the paths of your directory
+const path = require("path");
 const fs = require("fs");
 const render = require("./src/page-template.js");
-// THIS IS WHERE YOUR MAIN LOGIC WILL LIE
-// you would first require ALL of the files and node packages needed
-// manager, intern, engineer
+
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const inquirer = require("inquirer");
-// THIS IS WHERE YOU DO YOUR FS WRITEFILE STUFF
-// the dist folder is where the output html files will land
-// wherever i end up, i want to end up in the dist folder
+const jest = require("jest");
+
 const OUTPUT_DIR = path.resolve(__dirname, "dist");
-// in my dist folder, i want to create a team.html
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-//And now, we can use that pageTemplate as a function, which can ACCEPT a parameter
 pageTemplate(team);
 
 // INDEX FILES ARE CONSIDERED THE ENTRY POINT TO YOUR APP
 // IF THIS IS YOUR ENTRY POINT, YOU MUST DO YOUR INQUIRER HERE
 
-class Engineer {
-  constructor(id, username) {
-    this.id = id;
-    this.username - username;
-  }
-}
-
 const membersArray = [];
 
 function runApp() {
   //   ...Inquirer prompt and the functions that will ask users about manager, intern, and engineer.
+  const createAProfile = () => {
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          name: "employee type",
+          message: "I am creating a profile for?",
+          choices: ["Engineer", "Intern", "Manager"],
+        },
+      ])
+      .then((val) => {
+        // If the user says yes to another game, play again, otherwise quit the game
+        if (val.choices === "Engineer") {
+          createEngineer();
+        } else if (val.choices === "Intern") {
+          createIntern();
+        } else if (val.choices === "Manager") {
+          createManager();
+        } 
+
+      });
+  };
+
   function createManager() {
     inquirer
       .prompt([
