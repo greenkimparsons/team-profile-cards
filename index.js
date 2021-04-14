@@ -170,7 +170,6 @@ function runApp() {
     // looking for path to dist folder
     fs.writeFileSync(outputPath, render(membersArray), "utf-8");
   }
-  buildTeam();
 }
 
 runApp();
