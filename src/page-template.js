@@ -4,27 +4,13 @@ const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 // generate the HTML pages
 const generateTeam = (team) => {
-  const html = "";
-  team.forEach((employee) => {
-    if (employee.getRole() === "Engineer") {
-      html += createEngineer(employee);
-    }
-    if (employee.getRole() === "Intern") {
-      html += createIntern(employee);
-    }
-    if (employee.getRole() === "Manager") {
-      html += createManager(employee);
-    }
-  });
-  generateFinalHTML(html);
-};
-// A method for a template to render manager info
+  // A method for a template to render manager info
 
-// A method for a template to render engineer info
+  // A method for a template to render engineer info
 
-// A method for a template to render intern info
-const createEngineer = (engineer) => {
-  return `
+  // A method for a template to render intern info
+  const createEngineer = (engineer) => {
+    return `
     <div class="card" style="width: 18rem">
         <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
@@ -36,10 +22,10 @@ const createEngineer = (engineer) => {
         </ul>
         </div>
     </div>`;
-};
+  };
 
-const createIntern = (intern) => {
-  return `
+  const createIntern = (intern) => {
+    return `
     <div class="card" style="width: 18rem">
         <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
@@ -51,10 +37,10 @@ const createIntern = (intern) => {
         </ul>
         </div>
     </div>`;
-};
+  };
 
-const createManager = (manager) => {
-  return `
+  const createManager = (manager) => {
+    return `
     <div class="card" style="width: 18rem">
         <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
@@ -66,15 +52,26 @@ const createManager = (manager) => {
         </ul>
         </div>
     </div>`;
+  };
+  
+  const htmlIndex = [];
+  htmlIndex.push(
+    team
+      .filter((employee) => employee.getRole() === "Engineer")
+      .map((engineer) => createEngineer(engineer))
+  );
+  htmlIndex.push(
+    team
+      .filter((employee) => employee.getRole() === "Intern")
+      .map((intern) => createIntern(intern))
+  );
+  htmlIndex.push(
+    team
+      .filter((employee) => employee.getRole() === "Manager")
+      .map((manager) => createManager(manager))
+  );
+  return htmlIndex.join("");
 };
-
-const html = [];
-html.push(
-  team
-    .filter((employee) => employee.getRole() === "Manager")
-    .map((manager) => createManager(manager))
-);
-return html.join("");
 
 // We are exporting out an anonymous function
 module.exports = (team) => {

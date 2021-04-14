@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-// const render = require("./src/page-template.js");
+const render = require("./src/page-template.js");
 
 const Employee = require("./lib/Employee");
 const Intern = require("./lib/Intern");
@@ -78,6 +78,7 @@ function runApp() {
         membersArray.push(manager);
         console.log(membersArray);
         // buildTeam();
+        createAProfile();
       });
   }
 
@@ -159,15 +160,15 @@ function runApp() {
       });
   }
 
-  // function buildTeam() {
-  //   // Create the output directory if the output path doesn't exist
-  //   if (!fs.existsSync(OUTPUT_DIR)) {
-  //     fs.mkdirSync(OUTPUT_DIR); // creates a directory if it doesn't exist
-  //   }
-  //   // looking for path to dist folder
-  //   fs.writeFileSync(outputPath, render(membersArray), "utf-8");
-  // }
-  // buildTeam();
+  function buildTeam() {
+    // Create the output directory if the output path doesn't exist
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR); // creates a directory if it doesn't exist
+    }
+    // looking for path to dist folder
+    fs.writeFileSync(outputPath, render(membersArray), "utf-8");
+  }
+  buildTeam();
 }
 
 runApp();
