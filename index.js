@@ -28,7 +28,7 @@ function runApp() {
           type: "list",
           name: "employeeType",
           message: "I am creating a profile for?",
-          choices: ["Engineer", "Intern", "Manager"],
+          choices: ["Engineer", "Intern", "Manager", "Build Team"],
         },
       ])
       .then((val) => {
@@ -38,6 +38,8 @@ function runApp() {
           createIntern();
         } else if (val.employeeType === "Manager") {
           createManager();
+        } else if (val.employeeType === "Build Team") {
+          buildTeam();
         }
       });
   }
