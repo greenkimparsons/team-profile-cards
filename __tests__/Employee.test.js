@@ -12,7 +12,19 @@ describe("Tests to see if Employee Class exists", () => {
 
   it("should take in a name", () => {
     const name = "Green";
-    const employeeObject = new Employee("Green");
-    expect(employeeObject.name).toBe(name);
+    const employeeName = new Employee("Green");
+    expect(employeeName.name).toBe(name);
+  });
+
+  it("should take in an id", () => {
+    const id = 2;
+    const employeeID = new Employee(2);
+    expect(employeeID.id).toBe(id);
+  });
+
+  it("should take in an email", () => {
+    const email = "@";
+    const employeeEmail = new Employee("@");
+    expect(employeeEmail.email).toBe(email);
   });
 });

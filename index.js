@@ -48,37 +48,113 @@ function runApp() {
         {
           type: "input",
           name: "managerName",
-          message: "Type name of manager.",
+          message: "What is the manager's name?",
         },
         {
           type: "input",
           name: "managerID",
-          message: "Type manager's ID.",
+          message: "What is the manager's ID?",
         },
         {
           type: "input",
           name: "managerEmail",
-          message: "Type manager's email.",
+          message: "What is the manager's email?",
         },
         {
           type: "input",
           name: "managerOfficeNum",
-          message: "Type manager's office number.",
+          message: "What is the manager's office number?",
         },
       ])
       .then((answers) => {
-        //How can I store this info based on manager, engineer, and intern?
-        // Where can I store this to call this info later on?
-        console.log(answers);
-        // const manager = new Manager(
-        //   answers.managerName,
-        //   answers.managerID,
-        //   answers.managerEmail,
-        //   answers.managerOfficeNum
-        // );
-        // console.log(manager);
-        // membersArray.push(manager);
-        // console.log(membersArray);
+        // console.log(answers);
+        const manager = new Manager(
+          answers.managerName,
+          answers.managerID,
+          answers.managerEmail,
+          answers.managerOfficeNum
+        );
+        console.log(manager);
+        membersArray.push(manager);
+        console.log(membersArray);
+        // buildTeam();
+      });
+  }
+
+  function createEngineer() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "engineerName",
+          message: "What is the engineer's name?",
+        },
+        {
+          type: "input",
+          name: "engineerID",
+          message: "What is the engineer's ID?",
+        },
+        {
+          type: "input",
+          name: "engineerEmail",
+          message: "What is the engineer's email?",
+        },
+        {
+          type: "input",
+          name: "engineerGithub",
+          message: "What is the engineer's Github?",
+        },
+      ])
+      .then((answers) => {
+        // console.log(answers);
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerID,
+          answers.engineerEmail,
+          answers.engineerGithub
+        );
+        console.log(engineer);
+        membersArray.push(engineer);
+        console.log(membersArray);
+        // buildTeam();
+      });
+  }
+
+  function createIntern() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "internName",
+          message: "What is the intern's name?",
+        },
+        {
+          type: "input",
+          name: "internID",
+          message: "What is the intern's ID?",
+        },
+        {
+          type: "input",
+          name: "internEmail",
+          message: "What is the intern's email?",
+        },
+        {
+          type: "input",
+          name: "internSchool",
+          message: "Where did the intern go to school?",
+        },
+      ])
+      .then((answers) => {
+        // console.log(answers);
+        const engineer = new Engineer(
+          answers.internName,
+          answers.internID,
+          answers.internEmail,
+          answers.internSchool
+        );
+        console.log(engineer);
+        membersArray.push(engineer);
+        console.log(membersArray);
         // buildTeam();
       });
   }

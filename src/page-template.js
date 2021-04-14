@@ -102,7 +102,7 @@ module.exports = (team) => {
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
                 YOUR METHOD GOES HERE THE CARDS OF MANAGER, INTERN, ENGINEER WILL BE. 
-                ${someFunction(team)}
+                ${generateTeam(team)}
             </div>
         </div>
     </div>
