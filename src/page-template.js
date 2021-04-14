@@ -9,9 +9,9 @@ const generateTeam = (team) => {
   const createEngineer = (engineer) => {
     return `
     <div class="card" style="width: 18rem">
-        <div class="card-body">
+        <div class="card-body text-dark bg-info">
         <h5 class="card-title">${engineer.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${engineer.getRole}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">${engineer.getRole()}</h6>
         <ul class="card-text">
             <li class="card-text-item">${engineer.id}</li>
             <li class="card-text-item">${engineer.email}</li>
@@ -24,9 +24,9 @@ const generateTeam = (team) => {
   const createIntern = (intern) => {
     return `
     <div class="card" style="width: 18rem">
-        <div class="card-body">
+        <div class="card-body text-white bg-success">
         <h5 class="card-title">${intern.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${intern.getRole}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">${intern.getRole()}</h6>
         <ul class="card-text">
             <li class="card-text-item">${intern.id}</li>
             <li class="card-text-item">${intern.email}</li>
@@ -38,10 +38,10 @@ const generateTeam = (team) => {
 
   const createManager = (manager) => {
     return `
-    <div class="card" style="width: 18rem color: red">
-        <div class="card-body">
+    <div class="card" style="width: 18rem">
+        <div class="card-body text-dark bg-warning">
         <h5 class="card-title">${manager.name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${manager.getRole}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">${manager.getRole()}</h6>
         <ul class="card-text">
             <li class="card-text-item">${manager.id}</li>
             <li class="card-text-item">${manager.email}</li>
@@ -79,8 +79,7 @@ module.exports = (team) => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" cross origin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c502137733.js"></script>
     <title>Document</title>
 </head>

@@ -150,14 +150,14 @@ function runApp() {
       ])
       .then((answers) => {
         // console.log(answers);
-        const engineer = new Engineer(
+        const intern = new Intern(
           answers.internName,
           answers.internID,
           answers.internEmail,
           answers.internSchool
         );
-        console.log(engineer);
-        membersArray.push(engineer);
+        console.log(intern);
+        membersArray.push(intern);
         console.log(membersArray);
         buildTeam();
         createAProfile();
