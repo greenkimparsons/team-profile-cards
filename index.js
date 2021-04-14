@@ -77,7 +77,7 @@ function runApp() {
         console.log(manager);
         membersArray.push(manager);
         console.log(membersArray);
-        // buildTeam();
+        buildTeam();
         createAProfile();
       });
   }
@@ -117,7 +117,8 @@ function runApp() {
         console.log(engineer);
         membersArray.push(engineer);
         console.log(membersArray);
-        // buildTeam();
+        buildTeam();
+        createAProfile();
       });
   }
 
@@ -156,7 +157,8 @@ function runApp() {
         console.log(engineer);
         membersArray.push(engineer);
         console.log(membersArray);
-        // buildTeam();
+        buildTeam();
+        createAProfile();
       });
   }
 

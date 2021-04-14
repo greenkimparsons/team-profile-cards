@@ -4,11 +4,8 @@ const Intern = require("../lib/Intern");
 const Manager = require("../lib/Manager");
 // generate the HTML pages
 const generateTeam = (team) => {
-  // A method for a template to render manager info
 
   // A method for a template to render engineer info
-
-  // A method for a template to render intern info
   const createEngineer = (engineer) => {
     return `
     <div class="card" style="width: 18rem">
@@ -41,7 +38,7 @@ const generateTeam = (team) => {
 
   const createManager = (manager) => {
     return `
-    <div class="card" style="width: 18rem">
+    <div class="card" style="width: 18rem color: red">
         <div class="card-body">
         <h5 class="card-title">${manager.name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${manager.getRole}</h6>
@@ -53,7 +50,7 @@ const generateTeam = (team) => {
         </div>
     </div>`;
   };
-  
+
   const htmlIndex = [];
   htmlIndex.push(
     team
@@ -90,7 +87,7 @@ module.exports = (team) => {
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
+            <div class="col-12 jumbotron mb-3 team-heading bg-dark text-white">
                 <h1 class="text-center">My Team</h1>
             </div>
         </div>
@@ -98,7 +95,6 @@ module.exports = (team) => {
     <div class="container">
         <div class="row">
             <div class="team-area col-12 d-flex justify-content-center">
-                YOUR METHOD GOES HERE THE CARDS OF MANAGER, INTERN, ENGINEER WILL BE. 
                 ${generateTeam(team)}
             </div>
         </div>
